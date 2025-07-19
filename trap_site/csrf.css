@@ -1,0 +1,16 @@
+html, body, form {
+    height: 100%;
+    width: 100%;
+}
+
+#submit-img {
+    height: 80%;
+    aspect-ratio: 800 / 600;
+    background-image: url(./cat.jpg);
+    background-size: contain;
+    cursor: pointer;
+}
+
+#click-img-msg {
+    font-size: 3rem;
+}

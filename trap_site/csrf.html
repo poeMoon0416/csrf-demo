@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="utf-8">
+        <title>csrf</title>
+        <link rel="stylesheet" href="./csrf.css">
+        <script src="./csrf.js"></script>
+    </head>
+    <body>
+        <!-- formはCORSをすり抜けるのでCSRFトークンで防ぐ必要がある -->
+        <form action="http://localhost:8080" method="post">
+        <!-- <form th:action="@{http://localhost:8080}" method="post"> -->
+            <p id="click-img-msg">画像をクリックで保存できます</p>
+            <input type="hidden" name="content" value="迷惑投稿">
+            <input type="submit" value="" id="submit-img">
+        </form>
+        <!-- fetchはまずCORSで防がれる, CORSはJSが何でもできすぎるからAJAXのXHRやfetch APIを防ぐためのものでタグは防がないという理由のようだ[参考URL](https://zenn.dev/michan74/articles/377bb407b14215) -->
+        <button id="submit-img" type="button" onClick="clickSubmitImg()"></button>
+    </body>
+</html>
