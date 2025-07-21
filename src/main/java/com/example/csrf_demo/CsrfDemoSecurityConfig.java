@@ -16,17 +16,17 @@ public class CsrfDemoSecurityConfig {
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity httpSecurity) throws Exception {
         // CSRFトークン無効化, これをコメントアウトするとキチンと403でCSRFが防がれる
-        // httpSecurity.csrf(csrf -> {
-        //     csrf
-        //             .disable();
-        // });
+        httpSecurity.csrf(csrf -> {
+            csrf
+                    .disable();
+        });
         // デフォルト設定の明示
         // httpSecurity.csrf(Customizer.withDefaults());
 
         // 全てのページで認証(指定なしだと全ページ認証不要になる)
         httpSecurity.authorizeHttpRequests(authorize -> {
             authorize
-                    .anyRequest().authenticated();
+                    .anyRequest().permitAll();
         });
 
         // ログイン成功時"/"に遷移(指定なしだと403エラーになる, 成功時の挙動が未定義だから？)

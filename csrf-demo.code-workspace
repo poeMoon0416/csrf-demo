@@ -1,0 +1,18 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		// サブプロジェクトをワークスペースに追加しないとJAVA_PROJECTSビューに認識されない
+		{
+			"path": "trap-site"
+		},
+		{
+			"path": "trap-site-app"
+		},
+	],
+	"settings": {
+		"java.compile.nullAnalysis.mode": "automatic",
+		"java.configuration.updateBuildConfiguration": "interactive"
+	},
+}
