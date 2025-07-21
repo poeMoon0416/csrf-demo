@@ -1,3 +1,5 @@
+*.jpg
+
 HELP.md
 .gradle
 build/
